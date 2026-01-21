@@ -9,7 +9,7 @@ class Animal:
         Animal.alive.append(self)
 
     def cheak_alive(self) -> None:
-        if self.health < 0 and self in Animal.alive:
+        if self.health <= 0 and self in Animal.alive:
             Animal.alive.remove(self)
 
     def __repr__(self) -> str:
