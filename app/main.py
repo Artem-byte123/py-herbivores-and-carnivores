@@ -22,11 +22,14 @@ class Herbivore (Animal):
         self.hidden = not self.hidden
 
 
-class Carnivore (Animal):
+class Carnivore(Animal):
     def bite(self, prey: Animal) -> None:
         if isinstance(prey, Carnivore):
             return
         if prey.hidden:
             return
         prey.health -= 50
-        prey.cheak_alive()
+        prey.check_alive()
+
+def feed_animals(animals: list[Animal]) -> int:
+    return sum(animal.feed() for animal in animals)
