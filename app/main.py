@@ -13,6 +13,7 @@ class Animal:
             print(f"Eating {self.appetite} food points...")
             return self.appetite
         return 0
+
     def check_alive(self) -> None:
         if self.health <= 0 and self in Animal.alive:
             Animal.alive.remove(self)
@@ -35,6 +36,7 @@ class Carnivore(Animal):
             return
         prey.health -= 50
         prey.check_alive()
+
 
 def feed_animals(animals: list[Animal]) -> int:
     return sum(animal.feed() for animal in animals)
