@@ -8,7 +8,12 @@ class Animal:
         self.health = health
         Animal.alive.append(self)
 
-    def cheak_alive(self) -> None:
+    def feed(self) -> None:
+        if self.health < 100:
+            print(f"Eating {self.appetite} food points...")
+            return self.appetite
+        return 0
+    def check_alive(self) -> None:
         if self.health <= 0 and self in Animal.alive:
             Animal.alive.remove(self)
 
